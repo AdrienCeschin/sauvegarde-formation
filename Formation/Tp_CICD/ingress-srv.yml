@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-srv
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/use-regex: 'true'
+spec:
+  rules:
+    - host: game.com
+      http:
+        paths:
+        - path: /test/?(.*)
+          backend:
+            serviceName: game-srv-test
+            servicePort: 5000
+        - path: /dev/?(.*)
+          backend:
+            serviceName: game-srv-dev
+            servicePort: 5000
+        - path: /prod/?(.*)
+          backend:
+            serviceName: game-srv-prod
+            servicePort: 5000

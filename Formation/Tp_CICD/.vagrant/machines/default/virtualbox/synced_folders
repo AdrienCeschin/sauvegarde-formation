@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/project":{"create":true,"guestpath":"/home/project","hostpath":"C:/Users/ib/Documents/Formation/Tp_CICD/project","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/Users/ib/Documents/Formation/Tp_CICD","disabled":false,"__vagrantfile":true}}}

@@ -1,0 +1,98 @@
+digraph Unix {
+	dir=BR;
+	size="24,15";
+	node [fontsize=24, shape=plaintext]; 
+
+	subgraph G1 {
+		edge [color=transparent];
+		node [fontcolor="#888888"];
+		1969 -> 1978;
+		1978 -> 1979;
+		1979 -> 1981;
+		1981 -> 1983;
+		1983 -> 1984;
+		1984 -> 1986;
+		1986 -> 1987;
+		1987 -> 1989;
+		1989 -> 1992;
+		1992 -> 1995;
+		1995 -> 1997;
+		1997 -> 1998;
+		1998 -> 2002;
+		2002 -> 2005;
+	}
+
+	minix_1 [label="Minix 1.x"];
+	minix_2 [label="Minix 2.x"];
+	minix_3 [label="Minix 3.x"];
+
+	v1 [label="V1"];
+	v7 [label="V7"];
+
+	system_v [label="System V (AT&T)"];
+	system_iii [label="System III"];
+	system_v_r4 [label="System V Release 4 (AT&T)"];
+
+	xenix [label="Xenix (Microsoft)"];
+	ultrix [label="Ultrix (DEC)"];
+	hp_ux [label="HP-UX (Hewlett-Packard)"];
+
+	bsd [label="BSD (Berkeley)"];
+
+	unix_95 [label="UNIX 95 (Open Group)"];
+	unix_98 [label="UNIX 98 (Open Group)"];
+
+
+	aix [label="AIX (IBM)"];
+
+	irix [label="IRIX (SGI)"];
+
+	iso_9945_2002 [label="ISO 9945:2002"];
+
+	solaris [label="Solaris (Sun Microsystems)"];
+
+	osf_1 [label="OSF/1, aka Tru64 (DEC)"];
+
+
+	subgraph G2 {
+		minix_1 -> minix_2 [penwidth=2];
+		minix_2 -> minix_3 [penwidth=2];
+
+		aix -> osf_1 [color=red];
+		bsd -> osf_1 [color=red];
+		bsd -> solaris [color=red];
+		bsd -> system_v_r4;
+		osf_1 -> unix_95;
+		system_iii -> hp_ux [color=red];
+		system_iii -> system_v [penwidth=2];
+		system_v -> aix [color=red];
+		system_v -> irix [color=red];
+		system_v -> osf_1 [color=red];
+		system_v_r4 -> unix_95 [penwidth=2];
+		system_v -> system_v_r4 [penwidth=2];
+		unix_95 -> unix_98 [penwidth=2];
+		unix_98 -> iso_9945_2002 [penwidth=2];
+		v1 -> v7 [penwidth=2];
+		v7 -> bsd [color=red];
+		v7 -> system_iii [penwidth=2];
+		v7 -> ultrix [color=red];
+		v7 -> xenix [color=red];
+	}
+
+
+	{ rank=same; 1969 v1 ; }
+	{ rank=same; 1978 v7 ; }
+	{ rank=same; 1979 xenix bsd ; }
+	{ rank=same; 1981 solaris ; }
+	{ rank=same; 1983 system_v ; }
+	{ rank=same; 1984 hp_ux ; }
+	{ rank=same; 1986 aix ; }
+	{ rank=same; 1987 minix_1 ; }
+	{ rank=same; 1989 system_v_r4 ; }
+	{ rank=same; 1992 osf_1 ; }
+	{ rank=same; 1995 unix_95 ; }
+	{ rank=same; 1997 minix_2 ; }
+	{ rank=same; 1998 unix_98 ; }
+	{ rank=same; 2002 iso_9945_2002 ; }
+	{ rank=same; 2005 minix_3 ; }
+}

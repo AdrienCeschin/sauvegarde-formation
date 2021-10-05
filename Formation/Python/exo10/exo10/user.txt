@@ -1,0 +1,2 @@
+42,dupont,jean,admin,moi moi moi,jean@moi.com,password
+11,omar,MA REGLE A MOI NBR,membre,AZZZ,om@g.c,azerty123

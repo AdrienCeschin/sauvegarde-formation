@@ -1,0 +1,11 @@
+wget https://services.gradle.org/distributions/gradle-7.0-bin.zip -P /tmp
+sudo unzip -d /opt/gradle /tmp/gradle-*.zip
+
+sudo echo 'export GRADLE_HOME=/opt/gradle/gradle-7.0
+export PATH=${GRADLE_HOME}/bin:${PATH}' >> /etc/profile.d/gradle.sh
+
+
+sudo chmod +x /etc/profile.d/gradle.sh
+ source /etc/profile.d/gradle.sh
+ ln -s /opt/gradle/gradle-7.0/bin/gradle /usr/bin/gradle
+ sudo apt install -y python3 python3-pip

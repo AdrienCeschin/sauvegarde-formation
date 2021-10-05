@@ -1,0 +1,1 @@
+{"rsync":{"/vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"C:/Users/ib/Documents/Formation/Linux/tp_avril_general/poste_multi1","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}}}
